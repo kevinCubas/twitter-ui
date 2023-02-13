@@ -1,11 +1,21 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 
-import {Bell, BookmarkSimple, DotsThreeCircle, Envelope, FileText, Hash, House, Sparkle, User} from "phosphor-react"
+import {
+  Bell, 
+  BookmarkSimple, 
+  DotsThreeCircle, 
+  Envelope, 
+  FileText, 
+  Hash, 
+  House, 
+  Sparkle, 
+  User} from "phosphor-react"
 
 import "./global.css"
 
 import twitterLogo from "./assets/logo-twitter.svg"
+import { Tweet } from "./components/Tweet"
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -65,6 +75,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             
           </form>
           <div className="separator"/>
+          <Tweet />
+          <Tweet />
+          <Tweet />
         </main>
       </div>
     </div>
