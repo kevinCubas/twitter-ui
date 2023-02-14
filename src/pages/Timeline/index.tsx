@@ -13,7 +13,7 @@ const tweets = [
 export function Timeline() {
   return (
     <main className="timeline">
-      <Header pageName="Home" />
+      <Header pageTitle="Home" />
 
       <form className="new-tweet-form">
         <label htmlFor="tweet">

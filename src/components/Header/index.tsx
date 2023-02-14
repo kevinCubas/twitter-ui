@@ -3,13 +3,13 @@ import "./Header.css";
 import { Sparkle } from "phosphor-react";
 
 interface IHeaderProps {
-  pageName: string
+  pageTitle: string
 }
 
-export function Header({pageName}: IHeaderProps) {
+export function Header({pageTitle}: IHeaderProps) {
   return (
     <header className="timeline-header">
-      {pageName}
+      {pageTitle}
       <Sparkle />
     </header>
   )
