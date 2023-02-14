@@ -50,3 +50,26 @@
 .answer-form button[type=submit]:hover {
   filter: brightness(0.9);
 }
+
+.answer-form button[type=submit] svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: none;
+}
+
+@media(max-width: 780px) {
+  .answer-form label textarea {
+    font-size: 1rem;
+  }
+  .answer-form button[type=submit] {
+    padding: .75rem;
+  }
+  .answer-form button[type=submit] svg {
+    display: block;
+  }
+
+.answer-form button[type=submit] span {
+  display: none;
+}
+
+}
