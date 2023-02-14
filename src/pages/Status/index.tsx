@@ -17,27 +17,35 @@ export function Status() {
   const createNewAnswer = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    setAnswers([newAnswer, ...answers ])
+    setAnswers([newAnswer, ...answers])
     setNewAnswer("")
   }
-  
+  const handleHotKeySubmit = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && event.ctrlKey || event.metaKey) {
+      setAnswers([newAnswer, ...answers])
+      setNewAnswer("")
+    }
+  }
+
   return (
     <main className="status">
       <Header pageTitle="Tweet" />
 
-      <Tweet 
+      <Tweet
         content="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Autem recusandae exercitationem distinctio laborum beatae" 
+          Autem recusandae exercitationem distinctio laborum beatae"
       />
       <Separator />
       <form onSubmit={createNewAnswer} className="answer-form">
         <label htmlFor="tweet">
           <img src="https://github.com/kevinCubas.png" alt="" />
-          <textarea 
-            id="tweet" 
+          <textarea
+            id="tweet"
             placeholder="Tweet your answer"
             value={newAnswer}
-            onChange={(event) => setNewAnswer(event.target.value)} />
+            onChange={(event) => setNewAnswer(event.target.value)}
+            onKeyDown={handleHotKeySubmit}
+          />
         </label>
         <button type="submit">Answer</button>
 

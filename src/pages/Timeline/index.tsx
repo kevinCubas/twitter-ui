@@ -19,6 +19,13 @@ export function Timeline() {
     setTweets([newTweet, ...tweets ])
     setNewTweet("")
   }
+
+  const handleHotKeySubmit = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && event.ctrlKey || event.metaKey) {
+      setTweets([newTweet, ...tweets])
+      setNewTweet("")
+    }
+  }
   
   return (
     <main className="timeline">
@@ -31,6 +38,7 @@ export function Timeline() {
             id="tweet" 
             placeholder="What's happening?"
             value={newTweet}
+            onKeyDown={handleHotKeySubmit}
             onChange={(event) => setNewTweet(event.target.value)}
             />
         </label>
